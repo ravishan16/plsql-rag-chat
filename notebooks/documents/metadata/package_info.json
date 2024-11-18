@@ -1,0 +1,73 @@
+{
+    "chess": {
+      "packages": {
+        "pl_pig_chess_data": {
+          "description": "Core data structures and constants for the chess engine",
+          "type": "package_spec",
+          "dependencies": [],
+          "owner": "Chess Engine Team",
+          "version": "1.0",
+          "last_modified": "2024-03-15",
+          "purpose": "Defines chess game data types, board representations, and common constants"
+        },
+        "pl_pig_chess_engine": {
+          "description": "Main chess engine implementation",
+          "type": "package_spec_and_body",
+          "dependencies": [
+            "pl_pig_chess_data",
+            "pl_pig_chess_engine_eval"
+          ],
+          "owner": "Chess Engine Team",
+          "version": "1.0",
+          "last_modified": "2024-03-15",
+          "purpose": "Handles core chess logic, move generation, and game state management"
+        },
+        "pl_pig_chess_engine_eval": {
+          "description": "Chess position evaluation module",
+          "type": "package_spec_and_body",
+          "dependencies": [
+            "pl_pig_chess_data",
+            "pl_pig_chess_engine"
+          ],
+          "owner": "Chess Engine Team",
+          "version": "1.0",
+          "last_modified": "2024-03-15",
+          "purpose": "Evaluates chess positions, calculates material balance, and positional factors"
+        },
+        "pl_pig_chess_interface": {
+          "description": "Chess engine interface and API layer",
+          "type": "package_spec_and_body",
+          "dependencies": [
+            "pl_pig_chess_data",
+            "pl_pig_chess_engine",
+            "pl_pig_chess_engine_eval"
+          ],
+          "owner": "Chess Engine Team",
+          "version": "1.0",
+          "last_modified": "2024-03-15",
+          "purpose": "Provides external interface for interacting with the chess engine"
+        }
+      },
+      "moduleInfo": {
+        "name": "PL/SQL Chess Engine",
+        "version": "1.0",
+        "description": "A PL/SQL-based chess engine implementation with position evaluation",
+        "architecture": {
+          "layers": [
+            {
+              "name": "Data Layer",
+              "packages": ["pl_pig_chess_data"]
+            },
+            {
+              "name": "Core Engine Layer",
+              "packages": ["pl_pig_chess_engine", "pl_pig_chess_engine_eval"]
+            },
+            {
+              "name": "Interface Layer",
+              "packages": ["pl_pig_chess_interface"]
+            }
+          ]
+        }
+      }
+    }
+  }

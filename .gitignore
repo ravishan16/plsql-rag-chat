@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.env
+.venv
+env/
+venv/
+ENV/
+.conda/
+.python-version
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+.vs/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+.jupyter/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+chat_histories/*
+!chat_histories/.gitkeep
+
+# Explicitly allow vector store and metadata
+!data/
+!data/vectorstore/
+!data/vectorstore/index.faiss
+!data/vectorstore/index.pkl
+!data/metadata/
+!data/metadata/chess_metadata.json
+
+# Documentation
+docs/_build/

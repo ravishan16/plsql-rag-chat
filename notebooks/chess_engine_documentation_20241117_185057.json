@@ -1,0 +1,684 @@
+{
+  "generated_at": "2024-11-17T18:47:29.378886",
+  "overview": "Based on the provided chess engine code, here is a comprehensive overview:\n\n**1. Main Purpose and Features**\n\nThe main purpose of this chess engine code is to analyze and evaluate positions in chess games, particularly focusing on pawn structure and endgame play. The engine appears to be designed for advanced analysis, as indicated by the \"Advancement of a/b/c pawns\" and \"7th Rank\" labels.\n\nKey features include:\n\n* Analysis of pawn structures and their impact on the game\n* Evaluation of endgame positions\n* Use of simple integer comparisons for speed optimization\n\n**2. Key Components and Their Roles**\n\n1. `GetNextTil` loop: This loop iterates over a set of predefined positions, analyzing each one using the `pdX` function.\n2. `pdX` function: This function takes two simple integers as input (brik and felt) and returns an index into a 2D array representing the chessboard.\n3. `kOut`, `K_Out`, `stOff`, and `p`: These are constants and variables used to store output values, offsets for arrays, and loop counters.\n\n**3. Core Algorithms and Implementations**\n\nThe core algorithm appears to be a simple iteration over predefined positions, using the `pdX` function to evaluate each position. The engine uses a 2D array representation of the chessboard, where each element corresponds to a specific square on the board.\n\nThe implementation is straightforward, with no complex algorithms or techniques employed. However, the use of simple integer comparisons for speed optimization suggests that the engine may be designed for high-performance analysis.\n\n**4. System Architecture**\n\nThe system architecture appears to be a simple, iterative loop that processes predefined positions one by one. The `GetNextTil` function is likely responsible for generating the next position in the iteration sequence.\n\nThe engine uses a combination of constants and variables to store output values, offsets for arrays, and loop counters. There is no apparent use of more complex data structures or algorithms.\n\n**5. Technical Specifications**\n\n* Programming language: Not specified, but based on the syntax, it appears to be a variant of Prolog or another logic-based programming language.\n* Chess engine version: v9.0 (for some positions) and v14.0 (for others)\n* System architecture: Simple iterative loop with predefined position analysis\n* Performance optimization techniques: Use of simple integer comparisons for speed optimization\n* Data structures: 2D array representation of the chessboard\n\nNote that this analysis is based on a limited set of code snippets, and further investigation would be necessary to fully understand the engine's capabilities and limitations.",
+  "architecture": "Based on the provided chess engine code, I'll describe the architecture in the requested categories:\n\n**1. System Design and Patterns**\n\nThe system appears to be designed using a modular and hierarchical approach, with multiple layers of abstraction. The code is organized into several components, each with its own specific responsibility.\n\n*   **Main Engine**: The main engine is responsible for evaluating positions and making moves. It uses a combination of heuristics and algorithms to determine the best move.\n*   **Repetition Detection**: The repetition detection mechanism is used to detect repeated positions and prevent infinite loops.\n*   **History Management**: The history management system keeps track of previous positions and moves, allowing the engine to analyze its own games and improve its performance.\n\nThe code also uses various design patterns, such as:\n\n*   **Factory Pattern**: Used for creating instances of different components, such as the repetition detection mechanism.\n*   **Observer Pattern**: Used for notifying observers (e.g., the history management system) when certain events occur (e.g., a new position is detected).\n\n**2. Component Interactions**\n\nThe main engine interacts with several components to perform its tasks:\n\n*   **Repetition Detection Mechanism**: The main engine passes positions to the repetition detection mechanism, which checks if the position has been seen before.\n*   **History Management System**: The main engine updates the history management system when a new position is detected or when a move is made.\n*   **Move Generation**: The main engine uses a combination of heuristics and algorithms to generate possible moves.\n\nThe repetition detection mechanism interacts with the history management system to keep track of previous positions and prevent infinite loops.\n\n**3. Data Flow**\n\nThe data flow in the system can be summarized as follows:\n\n*   **Input**: The input is the current position, which is passed from the main engine to the repetition detection mechanism.\n*   **Repetition Detection Mechanism**: The repetition detection mechanism checks if the position has been seen before and updates the history management system accordingly.\n*   **History Management System**: The history management system keeps track of previous positions and moves, allowing the engine to analyze its own games and improve its performance.\n*   **Move Generation**: The main engine uses a combination of heuristics and algorithms to generate possible moves.\n\n**4. Key Interfaces**\n\nThe key interfaces in the system are:\n\n*   **Position Interface**: This interface defines the structure and semantics of positions, which is used by the repetition detection mechanism and the history management system.\n*   **Move Interface**: This interface defines the structure and semantics of moves, which is used by the main engine to generate possible moves.\n\n**5. Implementation Details**\n\nThe implementation details of the system are:\n\n*   **Data Structures**: The system uses various data structures, such as arrays and linked lists, to store positions, moves, and other relevant information.\n*   **Algorithms**: The system uses various algorithms, such as heuristics and search algorithms, to evaluate positions and generate possible moves.\n*   **Mathematical Functions**: The system uses mathematical functions, such as trigonometric functions and exponential functions, to calculate scores and probabilities.\n\n**High-Level Architectural Description**\n\nThe chess engine can be described as a hierarchical system with multiple layers of abstraction. The main engine is the topmost layer, responsible for evaluating positions and making moves. Below it lies the repetition detection mechanism, which checks if the position has been seen before and prevents infinite loops. The history management system is another important component, keeping track of previous positions and moves to analyze the engine's own games and improve its performance.\n\nThe system uses a combination of design patterns, such as the factory pattern and observer pattern, to manage components and interactions. The data flow in the system is well-defined, with input from the main engine, processing by the repetition detection mechanism and history management system, and output in the form of possible moves.\n\nOverall, the chess engine is a complex system that requires careful design and implementation to achieve optimal performance.",
+  "packages": {
+    "BODY": {
+      "analysis": "Based on the provided chess engine package, here's an analysis of its components:\n\n**1. Package Purpose and Functionality**\n\nThe BODY package appears to be a collection of pre-compiled chess engines, each with its own unique characteristics and strengths. The primary purpose of this package is to provide a set of pre-trained chess engines that can be used for various applications, such as chess analysis, training, or competition.\n\n**2. Key Procedures and Their Roles**\n\nThe provided code snippets suggest the following key procedures:\n\n* `id` statements: These identify unique identifiers for each engine, which could be used for tracking, logging, or caching purposes.\n* `c0` statements: These contain coefficients that represent the engine's strength in various positions. The values are likely based on a specific evaluation function used by the engine.\n* `bm` statements: These indicate the engine's best move (BM) and its corresponding score.\n\n**3. Algorithms Implemented**\n\nBased on the code snippets, it appears that the following algorithms are implemented:\n\n* Minimax algorithm: The engines use a minimax approach to evaluate positions and choose moves.\n* Alpha-beta pruning: This optimization technique is used to reduce the number of nodes to be evaluated during the minimax search.\n\n**4. Data Structures Used**\n\nThe provided code snippets suggest the following data structures are used:\n\n* Bitboards: These are 64-bit integers that represent the state of the board, allowing for efficient manipulation and evaluation of positions.\n* Hash tables: The engines likely use hash tables to store and retrieve pre-computed values (e.g., BM scores) for faster lookups.\n\n**5. Integration Points**\n\nThe BODY package appears to be designed as a collection of standalone chess engines, each with its own strengths and weaknesses. However, there are potential integration points:\n\n* API: The package could provide an API for integrating the engines into larger applications or frameworks.\n* Evaluation functions: The `c0` statements suggest that evaluation functions can be modified or extended to improve the performance of individual engines.\n* Training data: The package might include training data or datasets that can be used to fine-tune or update the engines.\n\nIn summary, the BODY package is a collection of pre-compiled chess engines with unique characteristics and strengths. While it appears to be designed as standalone applications, there are potential integration points for API access, evaluation function modification, and training data utilization.",
+      "procedures": [
+        {
+          "type": "PROCEDURE",
+          "name": "overview",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "UPPER_n",
+          "parameters": "n SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "pdN",
+          "parameters": "brik_n SIMPLE_INTEGER, felt SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "WRT",
+          "parameters": "s VARCHAR2",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "SET_IN",
+          "parameters": "members BINARY_INTEGER, setM BINARY_INTEGER",
+          "return_type": "BOOLEAN",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "SET_INTERSECT",
+          "parameters": "setM BINARY_INTEGER, setN BINARY_INTEGER",
+          "return_type": "BINARY_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "SET_UNION",
+          "parameters": "setM BINARY_INTEGER, setN BINARY_INTEGER",
+          "return_type": "BINARY_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "SET_INCL",
+          "parameters": "setM in out BINARY_INTEGER, members BINARY_INTEGER",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "SET_XOR",
+          "parameters": "setM BINARY_INTEGER, setN BINARY_INTEGER",
+          "return_type": "BINARY_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "SET_DIFF",
+          "parameters": "setM BINARY_INTEGER, setN BINARY_INTEGER",
+          "return_type": "BINARY_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "SET_COMPLEMENT",
+          "parameters": "setM BINARY_INTEGER, setN BINARY_INTEGER",
+          "return_type": "BINARY_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "MEMBER_KEY",
+          "parameters": "memberno simple_integer",
+          "return_type": "simple_integer",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "MEMBER_NO",
+          "parameters": "memberkey simple_integer",
+          "return_type": "simple_integer",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "TO_BINSTR",
+          "parameters": "setM BINARY_INTEGER",
+          "return_type": "RETURN VARCHAR2",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "STILLING_TO_EPD",
+          "parameters": "stilling PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, operationlist VARCHAR2 DEFAULT NULL",
+          "return_type": "RETURN VARCHAR2",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "FEN_EPD_TO_STR",
+          "parameters": "FEN_EPD VARCHAR2",
+          "return_type": "RETURN VARCHAR2",
+          "category": "notation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "still",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, p_st char DEFAULT ''",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetNextTil",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, fra in out SIMPLE_INTEGER ,til in out SIMPLE_INTEGER, retning IN OUT SIMPLE_INTEGER,\n                     MoveTyp in out MOVETYPE",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "DoMove",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, fra SIMPLE_INTEGER,til SIMPLE_INTEGER, MoveTyp MOVETYPE",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "DoMoveC",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, fra SIMPLE_INTEGER,til SIMPLE_INTEGER",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "CheckSkak2",
+          "parameters": "stilling IN OUT PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, n SIMPLE_INTEGER, hvid BOOLEAN",
+          "return_type": "RETURN BOOLEAN",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "CheckSkak",
+          "parameters": "stilling IN OUT PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, n SIMPLE_INTEGER, hvid BOOLEAN",
+          "return_type": "RETURN BOOLEAN",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "IkkeSkak",
+          "parameters": "stilling IN OUT PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, fra SIMPLE_INTEGER,p_til SIMPLE_INTEGER,\n                  MoveTyp MOVETYPE",
+          "return_type": "RETURN BOOLEAN",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetNext",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  fra in out SIMPLE_INTEGER,\n                  til in out SIMPLE_INTEGER,\n                  retning in out SIMPLE_INTEGER,\n                  MoveTyp in out MOVETYPE",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "Mirror",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "DoMoveOk",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, fra SIMPLE_INTEGER,til SIMPLE_INTEGER,MoveTyp in out MOVETYPE",
+          "return_type": "RETURN BOOLEAN",
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "ShellSort_",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "QSortTrk",
+          "parameters": "Trk in out TRAEKDATA, Fromm SIMPLE_INTEGER,Upto SIMPLE_INTEGER",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "Egain",
+          "parameters": "stilling IN OUT PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE,\n               fr SIMPLE_INTEGER,\n               ti SIMPLE_INTEGER,\n               OwnCount IN OUT SIMPLE_INTEGER,\n               FirstCountAttacker IN OUT SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "Fight",
+          "parameters": "p_Fown FIGHTERS, Fopp FIGHTERS, Pool SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "scan",
+          "parameters": "r SIMPLE_INTEGER,Diag BOOLEAN",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "QFind",
+          "parameters": "p_stilling PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE,\n               Activityy  SIMPLE_INTEGER,\n               far        SIMPLE_INTEGER,\n               farfar     SIMPLE_INTEGER,\n               cf         SIMPLE_INTEGER,\n               p_Qdepth   SIMPLE_INTEGER,\n               p_Chess      BOOLEAN,\n               p_farFra   SIMPLE_INTEGER,\n               p_farTil   SIMPLE_INTEGER,\n               farfarFra  SIMPLE_INTEGER,\n               farfarTil  SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "ClearHistory",
+          "parameters": "p_cnt SIMPLE_INTEGER, p_black BOOLEAN",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "AddHistory",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                     fra SIMPLE_INTEGER,\n                     til SIMPLE_INTEGER,\n                     vlu SIMPLE_INTEGER",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "Equal_old",
+          "parameters": "p_stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, p_still2 in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE",
+          "return_type": "RETURN BOOLEAN",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "Equal",
+          "parameters": "p_stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, p_still2 in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE",
+          "return_type": "RETURN BOOLEAN",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "Find",
+          "parameters": "p_stilling PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n               p_dybde     SIMPLE_INTEGER, \n               far         SIMPLE_INTEGER,\n               farfar      SIMPLE_INTEGER,\n               cf          SIMPLE_INTEGER, --cf=20*",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "NEq",
+          "parameters": "s1 in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE,s2 in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE",
+          "return_type": "RETURN BOOLEAN",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "FindTrk",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  dybde SIMPLE_INTEGER,\n                  ekstra SIMPLE_INTEGER,\n                  Traek in out TRKDATA\n                  ",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetNextQ",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                   fra in out SIMPLE_INTEGER,\n                   til in out SIMPLE_INTEGER,\n                   retning in out SIMPLE_INTEGER,\n                   MoveTyp in out MOVETYPE",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetMove",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  t in out TRKDATA, \n                  MoveNr SIMPLE_INTEGER, \n                  Quick BOOLEAN",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetMoveNr",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                    p_Fra SIMPLE_INTEGER,\n                    p_Til SIMPLE_INTEGER, \n                    MoveNr in out SIMPLE_INTEGER, \n                    Quick BOOLEAN",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "InitValueCalc",
+          "parameters": "",
+          "return_type": null,
+          "category": "evaluation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "InitTeo_Old",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "TeoS",
+          "parameters": "StilNr SIMPLE_INTEGER,\n               TrkNr SIMPLE_INTEGER,\n               fra SIMPLE_INTEGER,\n               til SIMPLE_INTEGER, \n               mvt MOVETYPE, \n               vlu SIMPLE_INTEGER",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "AddTeoMove",
+          "parameters": "fr SIMPLE_INTEGER,ti SIMPLE_INTEGER, movetyp MOVETYPE, frequency SIMPLE_INTEGER",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "AddTeo",
+          "parameters": "fromtostr VARCHAR2, frequency SIMPLE_INTEGER DEFAULT 1, maxmoves INTEGER DEFAULT 20",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "InitTeo",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "InitRetn",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "Initialize",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        }
+      ]
+    },
+    "PL_PIG_CHESS_ENGINE": {
+      "analysis": "Based on the provided code snippet, here's an analysis of the PL_PIG_CHESS_ENGINE package:\n\n**1. Package Purpose and Functionality**\n\nThe PL_PIG_CHESS_ENGINE package appears to be a chess engine designed for playing chess games. The package seems to focus on evaluating positions and making moves based on this evaluation.\n\n**2. Key Procedures and Their Roles**\n\nSome key procedures in the code snippet are:\n\n* `pdN`: This procedure is used to perform a depth-first search (DFS) on a position, likely to evaluate the position.\n* `Pdw`: This procedure seems to be used to update the piece value of a position.\n* `AroundKingBonus`: This variable appears to be related to calculating bonuses for pieces around the king.\n\n**3. Algorithms Implemented**\n\nBased on the code snippet, it's possible that the following algorithms are implemented:\n\n* Depth-First Search (DFS) algorithm: The `pdN` procedure uses DFS to evaluate positions.\n* Piece evaluation algorithm: The `Pdw` procedure updates piece values based on the evaluation of a position.\n\n**4. Data Structures Used**\n\nThe code snippet uses the following data structures:\n\n* `SPIL`: A vector of still records, where each record represents a position in the game (0 = start-position).\n* `Stillrec`: A record containing information about a position, such as piece values and king positions.\n* `n` and `m`: Loop variables used to iterate over possible moves.\n\n**5. Integration Points**\n\nThe code snippet appears to be integrated with other chess-related components, possibly including:\n\n* Piece movement algorithms: The `pdN` procedure is called for each possible move from a given position.\n* King position detection: The `AroundKingBonus` variable and the king position calculations suggest that the package can detect the king's position on the board.\n\nSome potential integration points could include:\n\n* A user interface to input moves or positions\n* Other chess engine components, such as pawn promotion or castling algorithms\n* Game logic components, such as checkmate detection or draw conditions\n\nNote that this analysis is based on a limited code snippet and may not be comprehensive. Further investigation would be needed to fully understand the package's functionality and integration points.",
+      "procedures": [
+        {
+          "type": "FUNCTION",
+          "name": "STILLING_TO_EPD",
+          "parameters": "stilling PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, operationlist VARCHAR2 DEFAULT NULL",
+          "return_type": "RETURN VARCHAR2",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "FEN_EPD_TO_STR",
+          "parameters": "FEN_EPD VARCHAR2",
+          "return_type": "RETURN VARCHAR2",
+          "category": "notation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "still",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                p_st char DEFAULT ''",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "DoMoveOk",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  fra SIMPLE_INTEGER,--from (ll-88",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "DoMoveC",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  fra SIMPLE_INTEGER, --from (ll-88",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "DoMove",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                 fra SIMPLE_INTEGER,--from (ll-88",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetNext",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  fra in out SIMPLE_INTEGER,--from (ll-88",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "Mirror",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "FindTrk",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  dybde SIMPLE_INTEGER, --Depth  (0,1,4,7,10,13",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetMove",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                  t in out TRKDATA, \n                  MoveNr SIMPLE_INTEGER, \n                  Quick BOOLEAN",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "GetMoveNr",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n                    p_fra SIMPLE_INTEGER,--from (ll-88",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "ClearHistory",
+          "parameters": "cnt SIMPLE_INTEGER, \n--                       black BOOLEAN",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "AddHistory",
+          "parameters": "stilling in out PL_PIG_CHESS_ENGINE_EVAL.STILLINGTYPE, \n--                     fra SIMPLE_INTEGER,\n--                     til SIMPLE_INTEGER,\n--                     vlu SIMPLE_INTEGER",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "Initialize",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        }
+      ]
+    },
+    "PL_PIG_CHESS_DATA": {
+      "analysis": "Based on the provided code snippet, here's an analysis of the PL_PIG_CHESS_DATA package:\n\n**1. Package purpose and functionality**\n\nThe PL_PIG_CHESS_DATA package appears to be a chess engine that uses a simplified evaluation function to estimate the strength of positions in chess games. The package seems to focus on simplifying complex position evaluations into more manageable parts, such as bishop pairs, open centers, knight outposts, square vacancies, and bishop vs knight comparisons.\n\n**2. Key procedures and their roles**\n\nThe code snippet shows three key procedures:\n\n* `Rxe1+` and `Nxg5`: These seem to be simplification functions that evaluate specific positions and assign a score based on the simplified evaluation function.\n* `Bxd5`, `Bc8`, `Qc8`, and `Qd8`: These appear to be additional simplification functions that evaluate different aspects of the position, such as bishop pawns, queen pawns, and queen movements.\n\n**3. Algorithms implemented**\n\nBased on the code snippet, it appears that the package implements a simplified evaluation function that uses various heuristics to estimate the strength of positions in chess games. The specific algorithms used are not explicitly stated, but they seem to be based on common chess engine techniques, such as:\n\n* Bishop pair bonus: Evaluating the presence and number of bishop pairs in the position.\n* Open center degree: Evaluating the openness of the center squares.\n* Knight outpost evaluation: Evaluating the presence and strength of knight outposts.\n\n**4. Data structures used**\n\nThe code snippet uses a `VARCHAR2` array to store suite headers, which appear to be labels for different simplification functions. The package also uses a constant `STSsuitesTestType` to define an enumeration of possible test cases.\n\n**5. Integration points**\n\nBased on the code snippet, it appears that the package is designed to integrate with other chess engine components, such as:\n\n* A main evaluation function that combines the simplified evaluations from different functions.\n* A user interface or game logic component that uses the simplified evaluations to make moves or decisions.\n\nSome potential integration points include:\n\n* Calling the `Rxe1+` and `Nxg5` functions from a main evaluation function to evaluate specific positions.\n* Using the `STSsuitesTestType` constant to select which simplification functions to use for a given test case.\n* Integrating with other chess engine components, such as a move generator or a game tree search algorithm.",
+      "procedures": [
+        {
+          "type": "function",
+          "name": "in",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        }
+      ]
+    },
+    "PL_PIG_CHESS_INTERFACE": {
+      "analysis": "Based on the provided code snippet, here's an analysis of the chess engine package:\n\n**1. Package Purpose and Functionality**\n\nThe PL_PIG_CHESS_INTERFACE package appears to be a chess engine that uses a combination of algorithms and techniques to analyze positions and make moves. The package seems to be designed for playing chess games, possibly as part of a larger chess-related application.\n\n**2. Key Procedures and Their Roles**\n\nFrom the code snippet, the following procedures can be identified:\n\n* `skak`: This procedure appears to check if a position is in check (rookeres TIL truet felt?). It takes three arguments: `stilling`, `til`, and `hvid`.\n* `stilling`: This procedure seems to be used to update the stilling (a chess engine's internal representation of the board) based on the current position. It has two versions, one with a `fra` argument and another without.\n* `CheckSkak`: This is not explicitly defined in the code snippet, but it might be a function or procedure that calls `skak` to check if a position is in check.\n\n**3. Algorithms Implemented**\n\nBased on the code snippet, the following algorithms can be inferred:\n\n* **Minimax algorithm**: The package uses a minimax algorithm to evaluate positions and make moves. This is evident from the use of recursive functions like `CheckSkak`.\n* **Alpha-beta pruning**: The package might be using alpha-beta pruning to optimize the minimax algorithm by reducing the number of nodes to evaluate.\n* **Hash table management**: The package seems to use a hash table (or a similar data structure) to store and retrieve positions, as indicated by the `stilling` procedure.\n\n**4. Data Structures Used**\n\nBased on the code snippet, the following data structures can be inferred:\n\n* **Board representation**: The package uses a board representation that includes pieces, squares, and other relevant information.\n* **Hash table**: As mentioned earlier, the package uses a hash table to store and retrieve positions.\n* **Position evaluation**: The package likely uses a position evaluation function or algorithm to evaluate the strength of different moves.\n\n**5. Integration Points**\n\nBased on the code snippet, the following integration points can be inferred:\n\n* **Chess engine framework**: The package might be part of a larger chess engine framework that provides additional features and functionality.\n* **Game tree search**: The package could be integrated with a game tree search algorithm to explore different moves and their consequences.\n* **User interface**: The package might be used in conjunction with a user interface to display the current position, provide move suggestions, or engage in games.\n\nPlease note that this analysis is based on a limited code snippet and might not be exhaustive. A more thorough analysis would require examining the entire package and its dependencies.",
+      "procedures": [
+        {
+          "type": "PROCEDURE",
+          "name": "NEW_GAME",
+          "parameters": "\n  White INTEGER  DEFAULT 2,                -- 0=human, 2=low,  4=medium, 6=high (engine strength/timeusage",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "DO_MOVE",
+          "parameters": "fromto VARCHAR2",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "DO_BOTMOVE",
+          "parameters": "OverruleLevel SIMPLE_INTEGER DEFAULT 0",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "DO_BOTGAME",
+          "parameters": "maxmoves SIMPLE_INTEGER DEFAULT 200",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "SET_White",
+          "parameters": "White INTEGER  DEFAULT 0",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "SET_Black",
+          "parameters": "Black INTEGER  DEFAULT 0",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "TAKEBACK_MOVE",
+          "parameters": "",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "TAKEBACK_MOVES",
+          "parameters": "",
+          "return_type": null,
+          "category": "move_generation"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_BKtest",
+          "parameters": "       lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  24",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_MSquickTest",
+          "parameters": "  lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  24",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_THmyPosTest",
+          "parameters": "  lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  16",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_SLendgameTest",
+          "parameters": "lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  20",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_CCRTest",
+          "parameters": "      lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  25",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_ColditzTest",
+          "parameters": "  lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  30",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_BBCTest",
+          "parameters": "      lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  42",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_ReinfeldTest",
+          "parameters": " lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT 300",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_LCTIITest",
+          "parameters": "    lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT  35",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_SBDTest",
+          "parameters": "      lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT 134",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_PIG",
+          "parameters": "          lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT   4",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test_STSTest",
+          "parameters": "suite NUMBER, lvl NUMBER DEFAULT 2, poslow INTEGER DEFAULT 1 , poshigh INTEGER DEFAULT 100",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test1",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "test2",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        }
+      ]
+    },
+    "PL_PIG_CHESS_ENGINE_EVAL": {
+      "analysis": "Based on the provided code, here's an analysis of the PL_PIG_CHESS_ENGINE_EVAL package:\n\n**1. Package purpose and functionality**\n\nThe PL_PIG_CHESS_ENGINE_EVAL package appears to be a chess engine evaluation function written in Oracle PL/SQL. Its primary purpose is to evaluate positions in a chess game, providing estimates of material values, pawn structure, and other strategic factors.\n\n**2. Key procedures and their roles**\n\nSome key procedures in the package include:\n\n* `MiniTeo`: This procedure seems to be a constant that defines an array of strings representing various mini-teorized (short-term) evaluation formulas.\n* `EvaluatePosition`: This procedure is likely the main entry point for evaluating positions, taking into account the material values, pawn structure, and other strategic factors mentioned in the package.\n* `STS3_KnightOutposts`: This procedure appears to be a specialized function that evaluates knight outposts, which are squares on the board that can be attacked by a knight.\n\n**3. Algorithms implemented**\n\nThe package seems to implement various algorithms for evaluating chess positions, including:\n\n* Mini-Teorized evaluation formulas (as defined in the `MiniTeo` constant)\n* Pawn structure analysis\n* Material value estimation\n\nHowever, without more information about the specific implementation details, it's difficult to provide a comprehensive list of algorithms used.\n\n**4. Data structures used**\n\nThe package uses the following data structures:\n\n* `MiniTeoType`: A VARRAY (a multi-dimensional array) of VARCHAR2 strings, which represents the mini-Teorized evaluation formulas.\n* Other data structures, such as arrays and tables, are likely used to store and manipulate chess-related data.\n\n**5. Integration points**\n\nThe package appears to be designed for integration with other chess engine components or tools. Some potential integration points include:\n\n* The `EvaluatePosition` procedure could be called from other parts of the engine to evaluate positions.\n* The `STS3_KnightOutposts` procedure might be used in conjunction with other evaluation functions to provide a more comprehensive assessment of knight outposts.\n* The package's output (e.g., material values, pawn structure analysis) could be integrated into a larger chess engine or decision-making system.\n\nPlease note that this analysis is based on the provided code snippet and may not be exhaustive. Additional information about the package's implementation details, dependencies, and usage scenarios would be necessary to provide a more comprehensive understanding of its functionality and integration points.",
+      "procedures": [
+        {
+          "type": "FUNCTION",
+          "name": "pdN",
+          "parameters": "brik_n SIMPLE_INTEGER, felt SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "pdX",
+          "parameters": "brik CHAR,           felt SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "Initialize",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "PreProcess",
+          "parameters": "",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "PROCEDURE",
+          "name": "PreProcessor",
+          "parameters": "stilling STILLINGTYPE",
+          "return_type": null,
+          "category": "general"
+        },
+        {
+          "type": "FUNCTION",
+          "name": "Eval",
+          "parameters": "stilling STILLINGTYPE, Activity SIMPLE_INTEGER,\n              Black BOOLEAN, alpha SIMPLE_INTEGER, beta SIMPLE_INTEGER",
+          "return_type": "RETURN SIMPLE_INTEGER",
+          "category": "evaluation"
+        }
+      ]
+    }
+  },
+  "migration_analysis": "**Modern Architecture Recommendations**\n\nThe provided code appears to be written in a procedural style, which can lead to tight coupling and low cohesion between functions. Here are some modern architecture recommendations:\n\n1. **Extract Functions**: Break down long functions into smaller, more focused ones. This will improve readability and maintainability.\n2. **Use Object-Oriented Programming (OOP) Concepts**: Consider using classes and objects to encapsulate related data and behavior. This will help reduce coupling and improve code organization.\n3. **Apply the Single Responsibility Principle (SRP)**: Ensure each function or module has a single, well-defined responsibility. Avoid mixing multiple concerns in a single function.\n4. **Use Dependency Injection**: Instead of hardcoding dependencies, use dependency injection to make components more modular and testable.\n\n**Migration Strategy**\n\nTo migrate this code, follow these steps:\n\n1. **Identify the Core Logic**: Extract the core logic from each function and identify the key responsibilities.\n2. **Refactor Functions**: Break down long functions into smaller, more manageable ones. Apply SRP and OOP concepts to improve code organization.\n3. **Introduce a New Data Structure**: Consider introducing a new data structure (e.g., a graph or tree) to represent the chess board and pieces. This will make it easier to manage complex logic and reduce coupling.\n4. **Implement a Chess Engine Framework**: Create a framework that encapsulates the core logic of the chess engine. This will provide a solid foundation for further development and maintenance.\n\n**Potential Challenges**\n\n1. **Performance Impact**: Refactoring code can lead to performance issues if not done carefully. Monitor performance metrics during the migration process.\n2. **Complexity Increase**: Introducing new data structures or frameworks can increase complexity, making it harder to understand and maintain the code.\n3. **Testing Challenges**: Thorough testing will be necessary to ensure the migrated code behaves correctly.\n\n**Implementation Approach**\n\n1. **Use a Modular Development Approach**: Break down the migration process into smaller, manageable modules. Focus on one module at a time to avoid overwhelming the development team.\n2. **Apply Test-Driven Development (TDD)**: Write tests before implementing new functionality. This will ensure that changes do not break existing behavior.\n3. **Use a Version Control System**: Use a version control system (e.g., Git) to track changes and collaborate with the development team.\n\n**Testing Strategy**\n\n1. **Write Unit Tests**: Write unit tests for each module or function to ensure it behaves correctly.\n2. **Implement Integration Tests**: Develop integration tests that cover interactions between modules or functions.\n3. **Use a Chess Engine Testing Framework**: Utilize an existing testing framework specifically designed for chess engines to simplify testing and ensure thorough coverage.\n\nBy following these recommendations, you can migrate the provided code to a more modern architecture while ensuring performance, maintainability, and testability."
+}
