@@ -9,3 +9,4 @@ numpy>=1.26.0
 sqlparse>=0.4.4
 markdown
 pyyaml
+graphviz
