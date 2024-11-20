@@ -3,6 +3,9 @@
 ## Overview
 The PL/SQL Chess Engine RAG Chat Assistant is a specialized tool designed to help developers understand and interact with complex PL/SQL-based chess engine code. Using Retrieval-Augmented Generation (RAG) and local LLM capabilities, this tool provides intelligent, context-aware responses about chess engine implementation details, algorithms, and code structure.
 
+## Demo
+![Watch](assets/chess_qr_code_with_text.png)
+
 ## Approach & Implementation Strategy 🧠
 
 ### Knowledge Base Creation
